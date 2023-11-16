@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import classes from "./CartItem.module.css";
+import PropTypes from "prop-types";
 
 const CartItem = (props) => {
   const dispatch = useDispatch();
@@ -43,3 +44,22 @@ const CartItem = (props) => {
 };
 
 export default CartItem;
+
+CartItem.propTypes = {
+  /**
+   * Is this the principal call to action on the page?
+   */
+  procut1: PropTypes.bool,
+  procut2: PropTypes.bool,
+  procut3: PropTypes.bool,
+
+  item: PropTypes.any,
+};
+
+CartItem.defaultProps = {
+  product1: false,
+  product2: false,
+  product3: false,
+  item: null,
+  onClick: undefined,
+};
